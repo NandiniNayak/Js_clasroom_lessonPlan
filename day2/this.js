@@ -6,12 +6,12 @@ function greet() {
   console.log(this);
 }
 greet();
-
 obj = {
   name: "Alex",
-  changeName: function () {
+  log: functio () {
     this.name = "Long";
   }
 }
-
+console.log(obj);
+obj.log();
 console.log(obj);

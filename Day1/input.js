@@ -8,12 +8,9 @@ process.stdin.on("readable", function () {
     console.log(`Hello ${name}`);
   }
 });
-// console.log("hello before name value is provided");
-//
-//
-// setTimeout(function () {
-//   console.log("hello after 5 seconds")
-// }, 5000);
+console.log("hello before name value is provided");
 
-// gets.chomp
-// puts"hello world"
+
+setTimeout(function () {
+  console.log("hello after 5 seconds")
+}, 5000);

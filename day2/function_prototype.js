@@ -5,7 +5,6 @@ function Human(firstName, lastName) {
     return `${this.firstName} ${this.lastName}`;
   }
 }
-
 // function instance
 person1 = new Human("Alex", "Holder");
 person2 =new Human("Oliver", "Hardman");
