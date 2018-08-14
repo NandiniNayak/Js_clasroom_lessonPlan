@@ -1,4 +1,3 @@
-// prompt("whats your name?");
 var name;
 console.log("what is you name?");
 process.stdin.on("readable", function () {

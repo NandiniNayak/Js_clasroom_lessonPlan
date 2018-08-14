@@ -1,0 +1,40 @@
+<!-- to add google map markers -->
+<!-- In console google api's enable maps, javascript api -->
+<!-- https://developers.google.com/maps/documentation/javascript/tutorial?hl=en_GB -->
+<!-- To get geolocation : use webapi-navigator.geolocation -->
+<html>
+  <head></head>
+  <body>
+    <p><button onClick="geoFindMe()" type="text">Show my location</button></p>
+    <div id="output"></div>
+    <script>
+      var output = document.getElementById("output");
+
+      function geoFindMe() {
+        // if geolocation doesnot exist
+        if (!navigator.geolocation) {
+          output.innerHTML = "geolocation not supported";
+          return;
+        }
+        // create the success callback to retrieve the lat and long
+        function success(position) {
+          let latitude = position.coords.latitude;
+          let longitude = position.coords.longitude;
+          output.innerHTML = "<p> latitude is: " + latitude + "<br>" + "longitude is: " + longitude + "</p>";
+
+          let img = new Image();
+          img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+          output.appendChild(img);
+        // error handler
+        function error() {
+          output.innerHTML = "something went wrong";
+        }
+
+        navigator.geolocation.getCurrentPosition(success, error);
+        // good example for call back to show, code can continue while waiting for the location
+        output.innerHTML = "Locating....";
+      }
+    </script>
+    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCDs0eJuJvtliN5t5cj3GhRDdWW--pZlys"></script>
+  </body>
+</html>
