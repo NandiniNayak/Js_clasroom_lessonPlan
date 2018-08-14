@@ -1,0 +1,27 @@
+<html>
+  <head></head>
+  <body>
+    <script>
+      function waitThreeSeconds() {
+        var waitTime = 3000 + new Date().getTime()
+        while (new Date() < waitTime ) {
+
+        }
+        console.log("executed 3 sec wait time!");
+
+      }
+      function clickHandler() {
+        console.log("click event registered");
+      }
+
+      document.addEventListener('click', clickHandler);
+      waitThreeSeconds();
+      console.log("finished execution");
+
+      setTimeout(function(){
+        console.log("executed after 3 seconds")
+      },3000);
+
+    </script>
+  </body>
+</html>
