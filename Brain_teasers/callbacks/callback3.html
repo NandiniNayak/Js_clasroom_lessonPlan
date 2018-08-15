@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+  <body>
+    <script>
+
+      setTimeout(callback, 3000);
+
+      function callback() {
+          console.log("3 sec timer completed")
+      }
+
+      function clickHandler() {
+        console.log("click event registered");
+      }
+      
+      document.addEventListener('click', clickHandler)
+
+    </script>
+  </body>
+</html>

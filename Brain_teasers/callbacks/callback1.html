@@ -1,0 +1,22 @@
+<!-- variable assigned with a value in the callback -->
+<html>
+  <head></head>
+  <body>
+    <script>
+     
+      alert(foo());
+
+      function foo(){
+          var bar;
+          console.log(`value of the bar in the foo function before setTimeout function :-------- ${bar}------`);
+
+          setTimeout(function() {
+            var bar = 5;
+          },0);
+
+          console.log(`value of the bar in the foo function after setTimeout function :-------- ${bar}------`);
+      }
+
+    </script>
+  </body>
+</html>

@@ -2,30 +2,31 @@
   <head></head>
   <body>
     <script>
-      function waitThreeSecond(cb) {
+      function waitThreeSecond() {
         var waitTimer = 3000 + new Date().getTime()
         while(new Date() < waitTimer){
 
         }
-        cb()
+        setTimeout(function(){
+            console.log("MY CALLBACK FUNCTION EXECUTED AFTER 3 SECONDS")
+          },0);
       }
-      function callback() {
-          console.log("CALLBACK 3 sec timer executed!");
-      }
+
       function clickHandler(){
         console.log("click event registered");
       }
-
+      
       document.addEventListener('click', clickHandler);
-
        // call the long running function
-      // waitThreeSecond(callback);
-      console.log("execution completed!")
+      waitThreeSecond();
+      console.log("execution completed!");
 
-      setTimeout(function(){
-        console.log("3 sec timeout function running")
-      },3000);
 
+      // setTimeout(callback, 0);
+      //
+      // function callback() {
+      //     console.log("3 sec timer completed")
+      // }
 
     </script>
   </body>

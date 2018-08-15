@@ -1,0 +1,30 @@
+<!-- pass a callbacxk function to another js function... would this be put on the event loop?? -->
+<html>
+  <head></head>
+  <body>
+    <script>
+
+      function callTimeOut() {
+        setTimeout(function(){
+            console.log("time out callback function completed")
+          },0);
+      }
+      callTimeOut();
+
+      waitThreeSecond(callback);
+
+      function waitThreeSecond(callback) {
+        var ms = 3000 + new Date().getTime();
+        while (new Date() < ms){
+
+      }
+        callback();
+      }
+
+     function callback() {
+         console.log("CALLBACK : 3 seconds completed!");
+     }
+
+    </script>
+  </body>
+</html>
