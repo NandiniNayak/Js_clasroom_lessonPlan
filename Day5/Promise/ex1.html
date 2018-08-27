@@ -1,0 +1,22 @@
+<html>
+  <head></head>
+  <body>
+      <script>
+        console.log('The current battery information is:');
+        console.log(navigator.getBattery()
+            .then(function(result){
+                console.log(result)
+            }).catch(function (error) {
+                console.log("Something went wrong!")
+            }))
+          fetch('https://randomuser.me/api/')
+            .then(function (result) {
+                console.log("everything worked!")
+                console.log(result);
+                })
+            .catch( function(err) {
+                  console.log("soemthing went wrong")
+                })
+      </script>
+  </body>
+</html>

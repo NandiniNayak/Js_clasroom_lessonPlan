@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script>
+        $(document).ready(function() {
+          $("#content").append("<p>").append("Content created with jQuery");
+        })
+        document.addEventListener('DOMContentLoaded', function(){
+          var elem = document.querySelector("#content");
+          var para = document.createElement("p");
+          var text = document.createTextNode("Content created without jquery");
+          para.appendChild(text);
+          elem.appendChild(para);
+        })
+    </script>
+
+  </body>
+</html>

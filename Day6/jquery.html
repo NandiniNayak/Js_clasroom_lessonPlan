@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="content">
+    </div>
+    <button onclick= "addContent()">click here</button>
+    <script>
+        $(document).ready( function(){
+            $("#content").appendChild("<p>").appendChild("Content created from Jquery")
+        })
+
+        function addContent(){
+          var elem = document.querySelector("#content");
+          var para = document.createElement("p")
+          var text = document.createTextNode("Content created without jQuery");
+          para.appendChild(text);
+          elem.appendChild(para);
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+  <head></head>
+  <body>
+    User: <input type="text" id="user">
+    Age: <input type="text" id="age">
+    <button onclick="saveCookies()">Save To Cookies</button>
+    <button onclick="loadCookies()">Load From Cookies</button>
+    <p id="out"></p>
+    <script>
+      function saveCookies(){
+        let myCookies = {};
+        myCookies["_user"] = document.getElementById("user").value;
+        myCookies["_age"] = document.getElementById("age").value;
+
+        document.cookie = "";
+        var expiresAttr = new Date(Date.now()+60*1000).toString();
+        var cookieString = "";
+        for (var key in myCookies) {
+          cookieString = key+"="+myCookies[key]+";"+expiresAttr+";"
+          document.cookie = cookieString;
+        }
+        document.getElementById("out").innerHTML = document.cookie;
+      }
+
+      function loadCookies() {
+        let myCookies = {};
+        var kv = document.cookie.split(";");
+        for (var id in kv) {
+          var cookie = kv[id].split("=");
+          myCookies[cookie[0].trim()] = cookie[1];
+        }
+        document.getElementById("user").value = myCookies["_user"];
+        document.getElementById("age").value = myCookies["_age"];
+      }
+    </script>
+  </body>
+</html>
